@@ -7,9 +7,8 @@ from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, EmailStr
 
-from app.models import get_db, User, TokenData
+from app.models import init_db
 from app.routers import auth, users
-from app.utils import verify_token, ACCESS_TOKEN_EXPIRE_MINUTES
 
 app = FastAPI(
     title="AuthAPI",
