@@ -27,8 +27,13 @@ app.add_middleware(
 )
 
 # Include routers
-app.include_router(auth.router, prefix="/api/auth", tags=["autenticaçao"])
+app.include_router(auth.router, prefix="/api/auth", tags=["autenticação"])
 app.include_router(users.router, prefix="/api/users", tags=["usuarios"])
+
+
+@app.on_event("startup")
+async def on_startup():
+    init_db()
 
 
 @app.get("/")
