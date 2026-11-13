@@ -25,7 +25,7 @@ router = APIRouter()
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/login")
 
 
-def get_current_user(token: str = Depends(oauth2_scheme)) -> dict:
+async def get_current_user(token: str = Depends(oauth2_scheme)) -> dict:
     """Dependência que extrai o usuário atual do token JWT."""
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
@@ -35,7 +35,7 @@ def get_current_user(token: str = Depends(oauth2_scheme)) -> dict:
     payload = decode_token(token)
     if payload is None or payload.type != "access":
         raise credentials_exception
-    user = get_user_by_id(payload.sub)
+    user = await get_user_by_id(payload.sub)
     if user is None or not user.get("is_active"):
         raise credentials_exception
     return user

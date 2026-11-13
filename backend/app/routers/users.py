@@ -14,10 +14,10 @@ router = APIRouter()
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/login")
 
 
-def get_current_user(token: str = Depends(oauth2_scheme)) -> dict:
+async def get_current_user(token: str = Depends(oauth2_scheme)) -> dict:
     """Extrai usuário atual do token JWT."""
     from app.routers.auth import get_current_user as auth_get_current
-    return auth_get_current(token)
+    return await auth_get_current(token)
 
 
 @router.get("/me", response_model=UserOut)
