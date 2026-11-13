@@ -1,0 +1,112 @@
+.container {
+  min-height: 100vh;
+  background: #0f172a;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: #1e293b;
+  border-bottom: 1px solid #334155;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  color: #f8fafc;
+}
+
+.logoutBtn {
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  border: 1px solid #ef4444;
+  background: transparent;
+  color: #ef4444;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.logoutBtn:hover {
+  background: #ef4444;
+  color: white;
+}
+
+.main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.center {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profileCard {
+  background: #1e293b;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  margin-bottom: 2rem;
+}
+
+.profileCard h2 {
+  color: #f8fafc;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+}
+
+.info p {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #334155;
+  color: #cbd5e1;
+}
+
+.info p:last-child {
+  border-bottom: none;
+}
+
+.info strong {
+  color: #94a3b8;
+  margin-right: 0.5rem;
+}
+
+.apiSection {
+  background: #1e293b;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #334155;
+}
+
+.apiSection h2 {
+  color: #f8fafc;
+  margin-bottom: 1rem;
+}
+
+.apiList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.apiLink {
+  color: #6366f1;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  background: rgba(99, 102, 241, 0.1);
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.apiLink:hover {
+  background: rgba(99, 102, 241, 0.2);
+}
+
+.note {
+  color: #64748b;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
